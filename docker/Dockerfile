@@ -1,0 +1,15 @@
+FROM debian:trixie
+RUN apt-get update
+RUN apt-get install -y gcc make autoconf automake cmake\
+  libncurses-dev e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk
+
+# install all source tarballs at the same time.
+RUN curl -LJO https://dev.mit.junic.kim/fls.tar.gz \
+  && tar xzvf fls.tar.gz --transform='s|^course_src|src|' \
+  && rm -rf fls.tar.gz
+
+WORKDIR /workspace
+COPY ./devshell.sh /devshell.sh
+
+# this is just to make sure the container doesn't just exit.
+ENTRYPOINT ["/bin/sh", "-c", "trap 'exit 0' SIGTERM; while :; do sleep 1; done"]

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# you should definitely replace this.
+while :; do
+  /bin/sh
+  echo "Shell exited. Respawning..."
+done
