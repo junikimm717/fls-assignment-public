@@ -1,7 +1,8 @@
 FROM debian:trixie
 RUN apt-get update
 RUN apt-get install -y gcc make autoconf automake cmake\
-  libncurses-dev e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk
+  libncurses-dev e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk\
+  bzip2 vim
 
 # install all source tarballs at the same time.
 RUN mkdir src && cd src \
@@ -12,5 +13,5 @@ RUN mkdir src && cd src \
 WORKDIR /workspace
 COPY ./devshell.sh /devshell.sh
 
-# this is just to make sure the container doesn't just exit.
+# this is to make sure the container doesn't just exit.
 ENTRYPOINT ["/bin/sh", "-c", "trap 'exit 0' SIGTERM; while :; do sleep 1; done"]
