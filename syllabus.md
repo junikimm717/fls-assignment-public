@@ -9,7 +9,13 @@ This class is intended as a crash course for students to understand the basics
 of how modern linux systems operate and how they themselves may be able to
 construct one.
 
-# Assignments
+# Logistics
+
+Please join the piazza at
+[https://piazza.com/mit/spring2026/6s913](https://piazza.com/mit/spring2026/6s913).
+Announcements and any other class discussion will take place there.
+
+# Assignment
 
 The assignment for this course has four main parts, named `busybox`, `kernel`,
 `image`, `user`, which represent different stages of an OS bootstrapping build
@@ -68,9 +74,10 @@ with questions about lab setup and the `busybox` section.
 
 - Continuing Lecture 2: Reminder on script correctness
 - Manual kernel configuration (modules, drivers, ...), show how `make menuconfig` works
-- What is the kernel command line? Why is it so important
+- What is the kernel command line? Why is it so important?
 - Real and Pseudo filesystems
   - Demo of why we need /proc, /dev, /sys, /tmp ...
+- The role of `switch_root`
 - What does init actually do? Why did systemd become a thing?
 
 ## Lab 2 - Friday 1/23 End of Lecture-5PM
