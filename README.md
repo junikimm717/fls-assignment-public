@@ -12,8 +12,7 @@ roughly in the order described:
 
 1. busybox - students will be compiling up busybox and musl, installing that
    onto a filesystem image, and generating an initramfs image.
-2. kernel - students will configure and build a linux kernel and install kernel
-   headers.
+2. kernel - students will configure and build a linux kernel.
 3. user - students will populate the rest of the root filesystem with daemons.
 4. image -  students will automate bootable disk image generation.
 

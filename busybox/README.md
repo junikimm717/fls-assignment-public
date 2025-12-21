@@ -3,6 +3,10 @@
 To get started on this lab, run `../docker/busybox-container.sh` which will drop
 you into a dev shell.
 
+The goal of this assignment is to generate a minimal root filesystem that can be
+used as an initramfs image. To do this, you will need to install musl libc,
+busybox, and the linux kernel headers.
+
 It is recommended to use the variable `$ROOTFS` instead of `/dist/busybox` when
 describing your installation paths for the build script. The directory
 `$SRC/busybox` contains the copy of the busybox source code that you should use.
@@ -18,7 +22,10 @@ Some hints:
 1. Debian uses glibc. Our busybox may not use this c library. Make sure to
    compile+install the musl library (source code at `$SRC/musl`) and then set up
    your compile flags so that busybox looks there, not at the system libc.
-2. Don't forget `DESTDIR`!
+2. Don't forget `DESTDIR`! But when installing busybox or the linux kernel
+   headers, different conventions will be used.
+3. Certain busybox utilities may need to be disabled if compilation fails. This
+   is expected.
 
 The following will indicate success:
 
