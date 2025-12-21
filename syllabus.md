@@ -15,7 +15,7 @@ The assignment for this course has four main parts, named `busybox`, `kernel`,
 `image`, `user`, which represent different stages of an OS bootstrapping build
 system. All parts must be completed and integrated together to receive credit
 for the course. The parts all rely on one another. The assignment must be
-submitted by **Friday, January 30, 2026 at 11:59PM**.
+submitted by **Friday, January 30, 2026 11:59PM GMT-5**.
 
 Students will be given a somewhat minimal scaffold for their projects and will
 be responsible for submitting a tarball for their project. More instructions are
@@ -35,7 +35,9 @@ There will be multiple lab hours designed to help students with the checkpoints.
 
 # Schedule
 
-## Lecture 1 - Tuesday 1/20 1-3PM, 34-301
+All lectures and lab hours are expected to take place at **34-301**.
+
+## Lecture 1 - Tuesday 1/20 1-3PM
 
 - Course structure
 - A review over shell scripting fundamentals including environment variables,
@@ -44,7 +46,7 @@ There will be multiple lab hours designed to help students with the checkpoints.
   idempotency, environment variable manipulation.
 - How does one use docker? Why is it so important?
 
-## Lecture 2 - Wednesday 1/21 1-3PM, 34-301
+## Lecture 2 - Wednesday 1/21 1-3PM
 
 - Understanding the build process
   (`./configure`, `make -jn`, `make install DESTDIR=...`)
@@ -57,12 +59,12 @@ There will be multiple lab hours designed to help students with the checkpoints.
 
 **live demo**: show a booting kernel alongside an initramfs.
 
-## Lab 1 - Wednesday 1/21 End of Lecture-5PM, TBD
+## Lab 1 - Wednesday 1/21 End of Lecture-5PM
 
 Help will be available for all parts of the lab, but we will prioritize those
 with questions about lab setup and the `busybox` section.
 
-## Lecture 3 - Friday 1/23 1-3PM, 34-301
+## Lecture 3 - Friday 1/23 1-3PM
 
 - Continuing Lecture 2: Reminder on script correctness
 - Manual kernel configuration (modules, drivers, ...), show how `make menuconfig` works
@@ -71,7 +73,7 @@ with questions about lab setup and the `busybox` section.
   - Demo of why we need /proc, /dev, /sys, /tmp ...
 - What does init actually do? Why did systemd become a thing?
 
-## Lab 2 - Friday 1/23 End of Lecture-5PM, TBD
+## Lab 2 - Friday 1/23 End of Lecture-5PM
 
 Help will be available for all parts of the lab, but we will prioritize those
 with questions regarding the `kernel` and `image` section.
@@ -79,7 +81,7 @@ with questions regarding the `kernel` and `image` section.
 By this point, students should have a compiled and working kernel binary and the
 ability to boot up a kernel into an initramfs.
 
-## Lecture 4 - Monday 1/26 1-3PM, 34-301
+## Lecture 4 - Monday 1/26 1-3PM
 
 - Mounting userland filesystems, determining user permissions
 - How init schemes work (demonstration with busybox's init)
@@ -90,11 +92,11 @@ ability to boot up a kernel into an initramfs.
     why can we just let the kernel take care of it?
 - Important daemons (getty, eudev, chrony, dhcpcd) and why you need them
 
-## Lab 3 - Tuesday 1/26 1-5PM, TBD
+## Lab 3 - Tuesday 1/26 1-5PM
 
 Help will focus on the `image` and `user` sections of the lab.
 
-## Lecture 5 - Thursday 1/29 1-3PM, 34-301
+## Lecture 5 - Thursday 1/29 1-3PM
 
 - SUID binaries (doas)
 - Configuring users and groups
@@ -103,8 +105,8 @@ Help will focus on the `image` and `user` sections of the lab.
   - Timezone data
 - Course Wrapup
 
-## Lab 4 - Thursday 1/29 End of Lecture-5PM, TBD
+## Lab 4 - Thursday 1/29 End of Lecture-5PM
 
 Help will focus on the `image` and `user` sections of the lab.
 
-## Assignment DUE - Friday 1/30 EOD
+## Assignment DUE - Friday 1/30 11:59PM ET
