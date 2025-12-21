@@ -2,7 +2,7 @@
 
 set -e
 
-if test -x "$PART"; then
+if test -z "$PART"; then
   echo "\$LAB must be defined"
   exit 1
 fi

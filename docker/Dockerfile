@@ -4,8 +4,9 @@ RUN apt-get install -y gcc make autoconf automake cmake\
   libncurses-dev e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk
 
 # install all source tarballs at the same time.
-RUN curl -LJO https://dev.mit.junic.kim/fls.tar.gz \
-  && tar xzvf fls.tar.gz --transform='s|^course_src|src|' \
+RUN mkdir src && cd src \
+  && curl -LJO https://dev.mit.junic.kim/fls.tar.gz \
+  && tar xzvf fls.tar.gz \
   && rm -rf fls.tar.gz
 
 WORKDIR /workspace

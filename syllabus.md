@@ -1,5 +1,5 @@
 ---
-title: 6.S913 Fundamentals of Linux Systems
+title: 6.S913 Fundamentals of Linux Systems Syllabus
 author: Juni Kim (junickim)
 date: 12/20/2025
 geometry: margin=1in
@@ -11,9 +11,11 @@ construct one.
 
 # Assignments
 
-The assignment for this course has four main parts, all of which must be
-completed to receive credit for the course. The parts all rely on one another.
-The assignment must be submitted by Friday January 30, 2026 at 11:59PM.
+The assignment for this course has four main parts, named `busybox`, `kernel`,
+`image`, `user`, which represent different stages of an OS bootstrapping build
+system. All parts must be completed and integrated together to receive credit
+for the course. The parts all rely on one another. The assignment must be
+submitted by **Friday, January 30, 2026 at 11:59PM**.
 
 Students will be given a somewhat minimal scaffold for their projects and will
 be responsible for submitting a tarball for their project. More instructions are
@@ -27,12 +29,7 @@ There will be multiple lab hours designed to help students with the checkpoints.
 
 # Schedule
 
-Schedule: Lectures: Tuesday 01/20, Wednesday 01/21, Friday 01/23, Monday 01/26, Thursday 01/29, 1-3 PM, Room 34-301
-
-
-## Week 1 - Bootstrapping
-
-### Lecture 1 - Tuesday 1/20 1-3PM, 34-301
+## Lecture 1 - Tuesday 1/20 1-3PM, 34-301
 
 - Course structure
 - A review over shell scripting fundamentals including environment variables,
@@ -41,7 +38,7 @@ Schedule: Lectures: Tuesday 01/20, Wednesday 01/21, Friday 01/23, Monday 01/26, 
   idempotency, environment variable manipulation.
 - How does one use docker? Why is it so important?
 
-### Lecture 2 - Wednesday 1/21 1-3PM, 34-301
+## Lecture 2 - Wednesday 1/21 1-3PM, 34-301
 
 - Understanding the build process
   (`./configure`, `make -jn`, `make install DESTDIR=...`)
@@ -53,12 +50,12 @@ Schedule: Lectures: Tuesday 01/20, Wednesday 01/21, Friday 01/23, Monday 01/26, 
 
 **live demo**: show a booting kernel alongside an initramfs.
 
-### Lab 1 - Wednesday 1/21 End of Lecture-5PM, TBD
+## Lab 1 - Wednesday 1/21 End of Lecture-5PM, TBD
 
 Help will be available for all parts of the lab, but we will prioritize those
 with questions about lab setup and the `busybox` section.
 
-### Lecture 3 - Friday 1/23 1-3PM, 34-301
+## Lecture 3 - Friday 1/23 1-3PM, 34-301
 
 - Continuing Lecture 2: Reminder on keeping build paths organized
 - Manual kernel configuration (modules, drivers, ...), show how `make menuconfig` works
@@ -67,7 +64,7 @@ with questions about lab setup and the `busybox` section.
   - Demo of why we need /proc, /dev, /sys, /tmp ...
 - What does init actually do? Why did systemd become a thing?
 
-### Lab 2 - Friday 1/23 End of Lecture-5PM, TBD
+## Lab 2 - Friday 1/23 End of Lecture-5PM, TBD
 
 Help will be available for all parts of the lab, but we will prioritize those
 with questions regarding the `kernel` and `image` section.
@@ -75,9 +72,7 @@ with questions regarding the `kernel` and `image` section.
 By this point, students should have a compiled and working kernel binary and the
 ability to boot up a kernel into an initramfs.
 
-## Week 2 - Going into the Kernel and Beyond
-
-### Lecture 4 - Monday 1/26 1-3PM, 34-301
+## Lecture 4 - Monday 1/26 1-3PM, 34-301
 
 - Mounting userland filesystems, determining user permissions
 - How init schemes work (demonstration with busybox's init)
@@ -88,11 +83,11 @@ ability to boot up a kernel into an initramfs.
     why can we just let the kernel take care of it?
 - Important daemons (getty, eudev, chrony, dhcpcd) and why you need them
 
-### Lab 3 - Tuesday 1/26 1-5PM, TBD
+## Lab 3 - Tuesday 1/26 1-5PM, TBD
 
 Help will focus on the `image` and `user` sections of the lab.
 
-### Lecture 5 - Thursday 1/29 1-3PM, 34-301
+## Lecture 5 - Thursday 1/29 1-3PM, 34-301
 
 - SUID binaries (doas)
 - Configuring users and groups
@@ -101,6 +96,8 @@ Help will focus on the `image` and `user` sections of the lab.
   - Timezone data
 - Course Wrapup
 
-### Lab 4 - Thursday 1/29 End of Lecture-5PM, TBD
+## Lab 4 - Thursday 1/29 End of Lecture-5PM, TBD
 
 Help will focus on the `image` and `user` sections of the lab.
+
+## Assignment DUE - Friday 1/30 EOD
