@@ -1,8 +1,10 @@
 FROM debian:trixie
 RUN apt-get update
-RUN apt-get install -y gcc make autoconf automake cmake\
-  e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk\
-  bzip2 flex bison bc libssl-dev libncurses-dev\
+RUN apt-get install -y --no-install-recommends \
+  gcc make autoconf automake cmake \
+  e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk \
+  bzip2 flex bison bc libssl-dev libncurses-dev \
+  qemu-system-x86 qemu-system-aarch64 ovmf \
   vim file
 
 # install all source tarballs at the same time.
