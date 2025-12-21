@@ -11,3 +11,6 @@ Your script should also install kernel headers into `$ROOTFS/usr/include`
 
 Furthermore, place all kernel headers into `$ROOTFS/usr/include` as they will be
 required for compiling certain userspace programs later down the line.
+
+Please feel free to write **additional scripts** to automate any other tasks
+(clearing build artifacts, running qemu, etc.) that you would like automated.

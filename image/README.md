@@ -15,6 +15,9 @@ matter in which directory one invokes the build script), must create separate
 .img files for both the ESP and the root partition. It must then stitch those
 two .img files together into a single bootable image file.
 
+Please feel free to write additional scripts to automate any other tasks
+(clearing build artifacts, running qemu, etc.) that you would like automated.
+
 Please do not make the combined bootable image more than 500MB in size.
 
 Hints:

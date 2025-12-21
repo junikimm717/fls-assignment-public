@@ -10,6 +10,9 @@ describing your installation paths for the build script. The directory
 You also need to make sure you generate a proper initramfs cpio image at
 `$DIST/archive.cpio.gz`.
 
+Please feel free to write **additional scripts** to automate any other tasks
+(clearing build artifacts, running qemu, etc.) that you would like automated.
+
 Some hints:
 
 1. Debian uses glibc. Our busybox may not use this c library. Make sure to

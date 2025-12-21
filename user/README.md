@@ -3,6 +3,12 @@
 To start this lab, run `../docker/user-container.sh` to start the corresponding
 environment for this section of the lab.
 
+The **build.sh** script will be run by the graders to check whether you
+correctly configure the root filesystem.
+
+Please feel free to write **additional scripts** to automate any other tasks
+(clearing build artifacts, running qemu, etc.) that you would like automated.
+
 Things that you must have:
 
 1. A properly configured /sbin/init

@@ -21,6 +21,12 @@ Students will be given a somewhat minimal scaffold for their projects and will
 be responsible for submitting a tarball for their project. More instructions are
 in the assignment repository README.
 
+A significant part of this course is learning to maintain clean, reproducible
+filesystem state. Projects will be evaluated on a fresh system, and any reliance
+on undeclared or residual state (e.g. working directory, undeclared environment
+variables, artifacts that weren't cleaned up) will be treated as a correctness
+issue.
+
 Labs should be done on sufficiently modern hardware (for reference, you should
 expect to compile the linux kernel). Docker is required on all systems, and
 Windows users are strongly advised to use wsl.
@@ -43,6 +49,7 @@ There will be multiple lab hours designed to help students with the checkpoints.
 - Understanding the build process
   (`./configure`, `make -jn`, `make install DESTDIR=...`)
   and all the tools that make that possible.
+- The source vs artifact distinction
 - What are the different compile flags? Why does the libc matter so much?
 - How does one use QEMU (the virtualization software used in the course) and
   what are the most important options?
@@ -57,7 +64,7 @@ with questions about lab setup and the `busybox` section.
 
 ## Lecture 3 - Friday 1/23 1-3PM, 34-301
 
-- Continuing Lecture 2: Reminder on keeping build paths organized
+- Continuing Lecture 2: Reminder on script correctness
 - Manual kernel configuration (modules, drivers, ...), show how `make menuconfig` works
 - What is the kernel command line? Why is it so important
 - Real and Pseudo filesystems
