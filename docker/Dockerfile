@@ -1,7 +1,7 @@
 FROM debian:trixie
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends \
-  gcc make autoconf automake cmake \
+  gcc make autoconf automake cmake ca-certificates \
   e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk \
   bzip2 flex bison bc libssl-dev libncurses-dev \
   qemu-system-x86 qemu-system-aarch64 ovmf \
