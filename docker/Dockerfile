@@ -4,7 +4,7 @@ RUN apt-get install -y --no-install-recommends \
   gcc make autoconf automake cmake ca-certificates \
   e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk fakeroot \
   bzip2 flex bison bc libssl-dev libncurses-dev gperf \
-  qemu-system-x86 qemu-system-aarch64 ovmf \
+  qemu-system-x86 qemu-system-aarch64 ovmf qemu-efi-aarch64 \
   vim file
 
 # install all source tarballs at the same time.
@@ -15,6 +15,7 @@ RUN mkdir src && cd src \
 
 WORKDIR /workspace
 COPY ./devshell.sh /devshell.sh
+COPY ./build-all-stages.sh /build-all-stages.sh
 
 # this is to make sure the container doesn't just exit.
 ENTRYPOINT ["/bin/sh", "-c", "trap 'exit 0' SIGTERM; while :; do sleep 1; done"]
