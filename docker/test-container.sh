@@ -20,6 +20,7 @@ if ! docker container inspect "$CONTAINER" >/dev/null 2>&1; then
     "$IMAGE:latest"
 fi
 
+echo "exec"
 docker exec \
   -e DIST="/dist" \
   -e SRC="/src" \
