@@ -1,13 +1,35 @@
 ---
-title: 6.S913 Fundamentals of Linux Systems Syllabus
-author: Juni Kim (junickim)
-date: 12/20/2025
+title: 6.S913 Fundamentals of Linux Systems
+author:
+- Juni Kim (junickim)
+date: 12/22/2025
 geometry: margin=1in
 ---
 
 This class is intended as a crash course for students to understand the basics
-of how modern linux systems operate and how they themselves may be able to
-construct one.
+of how modern Linux systems operate and for students to construct one from
+scratch.
+
+# Staff
+
+**Instructor** - Juni Kim (junickim), [https://junic.kim](https://junic.kim)
+
+**Teaching Assistant** - Jacky Zhao (icecream)
+
+# Prerequisites
+
+Students are expected to be comfortable working in Unix/Linux environments and
+using the command line as their primary interface for development.
+
+It would be strongly preferred that students are capable of:
+
+- Navigate and manipulate the filesystem using shell commands
+- Write and debug simple shell scripts
+- Understand environment variables, PATH resolution, and program invocation
+- Understand how to compile software from source using tools such as `make`
+
+Prior coursework in operating systems or systems programming is helpful but not
+required.
 
 # Logistics
 
@@ -15,10 +37,16 @@ Please join the piazza at
 [https://piazza.com/mit/spring2026/6s913](https://piazza.com/mit/spring2026/6s913).
 Announcements and any other class discussion will take place there.
 
+Lectures and lab hours will take place at **34-301**. We will try our best to
+record lectures and allow for remote participation.
+
+The course will move quite fast, so lecture and lab hour participation is
+strongly recommended.
+
 # Assignment
 
 The assignment for this course has four main parts, named `busybox`, `kernel`,
-`image`, `user`, which represent different stages of an OS bootstrapping build
+`user`, `image`, which represent different stages of an OS bootstrapping build
 system. All parts must be completed and integrated together to receive credit
 for the course. The parts all rely on one another. The assignment must be
 submitted by **Friday, January 30, 2026 11:59PM GMT-5**.
@@ -33,11 +61,14 @@ on undeclared or residual state (e.g. working directory, undeclared environment
 variables, artifacts that weren't cleaned up) will be treated as a correctness
 issue.
 
-Labs should be done on sufficiently modern hardware (for reference, you should
+The assignment should be done on sufficiently modern hardware (for reference, you should
 expect to compile the linux kernel). Docker is required on all systems, and
 Windows users are strongly advised to use wsl.
 
 There will be multiple lab hours designed to help students with the checkpoints.
+
+We will only grade the final submissions of those who have registered for
+credit. Submission logistics will be announced later.
 
 # Schedule
 
