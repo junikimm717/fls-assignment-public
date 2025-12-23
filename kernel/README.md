@@ -4,7 +4,7 @@ To start this lab, run `../docker/kernel-container.sh` to start the
 corresponding environment for this lab.
 
 You should aim to modify `./build.sh` such that in a clean run, it is capable of
-compiling a linux kernel binary and placing it at `$DIST/linuximage`. You will
+compiling a Linux kernel binary and placing it at `$DIST/linuximage`. You will
 have other scripts later on that work with the `$DIST/linuximage` kernel binary.
 
 Please feel free to write **additional scripts** to automate any other tasks
@@ -16,9 +16,9 @@ Depending on your system, the kernel might take a very long time to run. It is
 advised that all build artifacts are emitted to an isolated subdirectory of
 `$DIST` so it's persistent across container restarts.
 
-Also you should probably use the `-j` option in `make` for parallelization.
-The grading machine will use a substantial number of cores, and we will not
-tolerate excessively long build times.
+You should probably use the `-j` option in `make` for parallelization. The
+grading machine will use a substantial number of cores to accelerate builds,
+and we will not tolerate excessively long build times.
 
 ## Container Layout
 

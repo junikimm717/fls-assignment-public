@@ -24,10 +24,12 @@ The container that you'll get when running `../docker/user-container.sh`
 
 1. A properly configured busybox init file at `/etc/inittab` and a startup
    script `/etc/init.d/rcS` (this needs to be wired up to `/etc/inittab`)
-2. The init must set up essential kernel filesystems and spin up essential
-   daemons, most importantly getty and eudev.
+2. `/etc/inittab` must be configured so that busybox init mounts essential
+   kernel filesystems and starts essential daemons, most importantly getty and
+   eudev.
 3. Properly configured `/etc/group`, `/etc/shadow`, `/etc/passwd` (so that the
    root user can actually log in)
+4. A hostname set to your kerb.
 
 ## Optional
 
