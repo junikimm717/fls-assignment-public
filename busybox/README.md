@@ -1,7 +1,7 @@
 # Busybox
 
 To get started on this lab, run `../docker/busybox-container.sh` which will drop
-you into a dev shell.
+you into a dev container.
 
 The goal of this assignment is to generate a minimal root filesystem that can be
 used as an initramfs image. To do this, you will need to install musl libc,
@@ -17,7 +17,17 @@ You also need to make sure you generate a proper initramfs cpio image at
 Please feel free to write **additional scripts** to automate any other tasks
 (clearing build artifacts, running qemu, etc.) that you would like automated.
 
-Some hints:
+## Container Layout
+
+The container that you'll get when running `../docker/busybox-container.sh`
+(assuming this is your working directory) is laid out as follows:
+
+- This directory is mapped to `/workspace`
+- The `../dist` directory is mapped to `/dist`
+- The `/src` directory (provided in the container as the `$SRC` environment
+  variable) contains source trees for all the programs you will need to build
+
+## Hints
 
 1. Debian uses glibc. Our busybox may not use this c library. Make sure to
    compile+install the musl library (source code at `$SRC/musl`) and then set up

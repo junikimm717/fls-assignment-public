@@ -18,12 +18,51 @@ two .img files together into a single bootable image file.
 Please feel free to write additional scripts to automate any other tasks
 (clearing build artifacts, running qemu, etc.) that you would like automated.
 
-Please do not make the combined bootable image more than 500MB in size.
+Please do not make the combined bootable image more than 200MB in size.
 
-Hints:
+## Container Layout
+
+The container that you'll get when running `../docker/image-container.sh`
+(assuming this is your working directory) is laid out as follows:
+
+- This directory is mapped to `/workspace`
+- The `../dist` directory is mapped to `/dist` (which is also equal to the value
+  of the `$DIST` environment variable)
+- The `/src` directory (provided in the container as the `$SRC` environment
+  variable) contains source trees for all the programs you will need to build
+
+## Hints
 
 1. To create a filesystem image, you should initialize a zeroed file of some
    specified size, then use `mkfs.ext4` or `mkfs.vfat` to actually initialize
    the filesystem.
 2. For stitching the final partition together, it is recommended to use
    `sgdisk`, although you may use other tools as needed.
+
+If you want to test your image, below is the code we will use to grade your
+bootable image:
+
+```bash
+# if you built an x86 image:
+qemu-system-x86_64 \
+  -machine q35 \
+  -m 1024 \
+  -nographic \
+  -drive if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd \
+  -drive if=pflash,format=raw,file=/usr/share/OVMF/OVMF_VARS_4M.fd \
+  -drive if=virtio,format=raw,file="$IMAGE" \
+  -serial mon:stdio \
+  -netdev user,id=net0 \
+  -device virtio-net-pci,netdev=net0 \
+# if you built an arm image:
+qemu-system-aarch64 \
+  -machine virt \
+  -cpu cortex-a72 \
+  -m 1024 \
+  -nographic \
+  -drive if=pflash,format=raw,readonly=on,file=/usr/share/AAVMF/AAVMF_CODE.fd \
+  -drive if=pflash,format=raw,file=/usr/share/AAVMF/AAVMF_VARS.fd \
+  -drive if=virtio,format=raw,file="$IMAGE" \
+  -serial mon:stdio \
+  -net nic -net user
+```
