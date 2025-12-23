@@ -21,7 +21,7 @@ scratch.
 Students are expected to be comfortable working in Unix/Linux environments and
 using the command line as their primary interface for development.
 
-It would be strongly preferred that students are capable of:
+It would be strongly preferred that students can:
 
 - Navigate and manipulate the filesystem using shell commands
 - Write and debug simple shell scripts
