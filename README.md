@@ -35,7 +35,7 @@ export PATH="\
 :$PATH"
 ```
 
-### Windows
+## Windows
 
 If you are on Windows, you need to
 
