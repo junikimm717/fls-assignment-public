@@ -1,6 +1,6 @@
 FROM debian:trixie
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends tini \
   gcc make autoconf automake cmake ca-certificates \
   e2fsprogs cpio rsync curl xz-utils mtools dosfstools gdisk fakeroot \
   bzip2 flex bison bc libssl-dev libncurses-dev gperf libelf-dev build-essential \
@@ -17,5 +17,6 @@ WORKDIR /workspace
 COPY ./devshell.sh /devshell.sh
 COPY ./build-all-stages.sh /build-all-stages.sh
 
-# this is to make sure the container doesn't just exit.
-ENTRYPOINT ["/bin/sh", "-c", "trap 'exit 0' SIGTERM; while :; do sleep 1; done"]
+ENTRYPOINT ["/usr/bin/tini", "--"]
+
+CMD ["/devshell.sh"]
