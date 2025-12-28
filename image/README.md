@@ -55,7 +55,7 @@ qemu-system-x86_64 \
   -serial mon:stdio \
   -netdev user,id=net0 \
   -device virtio-net-pci,netdev=net0 \
-# if you built an arm image:
+# if you built an arm image (only difference is firmware and board):
 qemu-system-aarch64 \
   -machine virt \
   -cpu cortex-a72 \
@@ -65,5 +65,6 @@ qemu-system-aarch64 \
   -drive if=pflash,format=raw,file=/usr/share/AAVMF/AAVMF_VARS.fd \
   -drive if=virtio,format=raw,file="$IMAGE" \
   -serial mon:stdio \
-  -net nic -net user
+  -netdev user,id=net0 \
+  -device virtio-net-pci,netdev=net0
 ```
