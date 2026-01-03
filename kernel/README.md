@@ -1,6 +1,6 @@
 # Building the Kernel
 
-To start this lab, run `../docker/kernel-container.sh` to start the
+To start this lab, run `../scripts/kernel-container.sh` to start the
 corresponding environment for this lab.
 
 You should aim to modify `./build.sh` such that in a clean run, it is capable of
@@ -22,7 +22,7 @@ and we will not tolerate excessively long build times.
 
 ## Container Layout
 
-The container that you'll get when running `../docker/kernel-container.sh`
+The container that you'll get when running `../scripts/kernel-container.sh`
 (assuming this is your working directory) is laid out as follows:
 
 - This directory is mapped to `/workspace`

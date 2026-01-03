@@ -1,6 +1,6 @@
 # Building User Programs and the Root Filesystem
 
-To start this lab, run `../docker/user-container.sh` to start the corresponding
+To start this lab, run `../scripts/user-container.sh` to start the corresponding
 environment for this section of the lab.
 
 The **build.sh** script will be run by the graders to check whether you
@@ -11,7 +11,7 @@ Please feel free to write **additional scripts** to automate any other tasks
 
 ## Container Layout
 
-The container that you'll get when running `../docker/user-container.sh`
+The container that you'll get when running `../scripts/user-container.sh`
 (assuming this is your working directory) is laid out as follows:
 
 - This directory is mapped to `/workspace`

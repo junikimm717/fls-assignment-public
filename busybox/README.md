@@ -1,6 +1,6 @@
 # Busybox
 
-To get started on this lab, run `../docker/busybox-container.sh` which will drop
+To get started on this lab, run `../scripts/busybox-container.sh` which will drop
 you into a dev container.
 
 The goal of this assignment is to generate a minimal root filesystem that can be
@@ -19,7 +19,7 @@ Please feel free to write **additional scripts** to automate any other tasks
 
 ## Container Layout
 
-The container that you'll get when running `../docker/busybox-container.sh`
+The container that you'll get when running `../scripts/busybox-container.sh`
 (assuming this is your working directory) is laid out as follows:
 
 - This directory is mapped to `/workspace`

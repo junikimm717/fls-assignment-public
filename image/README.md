@@ -22,7 +22,7 @@ Please do not have the combined bootable image be more than 200MB in size.
 
 ## Container Layout
 
-The container that you'll get when running `../docker/image-container.sh`
+The container that you'll get when running `../scripts/image-container.sh`
 (assuming this is your working directory) is laid out as follows:
 
 - This directory is mapped to `/workspace`

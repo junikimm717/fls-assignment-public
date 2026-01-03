@@ -94,4 +94,4 @@ ROOTFS="/dist/user" ./user/build.sh
 ROOTFS="/dist/image" ./image/build.sh
 ```
 
-To test this for yourself, run the `./docker/test-container.sh` script.
+To test this for yourself, run the `./scripts/test-container.sh` script.

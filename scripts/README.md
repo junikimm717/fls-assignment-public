@@ -33,4 +33,6 @@ docker kill busybox-builder-lfs
 ## Grading
 
 The graders will run the `test-container.sh` script to test students' build
-pipelines. In the end, a bootable image should exist at `dist/`.
+pipelines. In the end, a bootable image should exist at `dist/bootable.img`.
+
+This bootable image can then be graded with `grade-image.sh`.
