@@ -20,11 +20,6 @@ if [ -n "$DIRTY" ]; then
   echo
   echo "This submission will ONLY include committed files."
   echo
-  echo "Fix options:"
-  echo "  1. git add + git commit your changes"
-  echo "  2. git stash them"
-  echo "  3. re-run with --allow-dirty (not recommended)"
-  echo
 fi
 
 mkdir -p "$DIST"
