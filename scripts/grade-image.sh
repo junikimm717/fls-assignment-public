@@ -21,5 +21,6 @@ fi
 docker run \
   --rm -it \
   -v "$(dirname "$BOOTABLE")":/dist \
+  --network=none \
   "$IMAGE" \
   /grade.py /dist/bootable.img

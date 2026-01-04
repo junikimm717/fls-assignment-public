@@ -16,6 +16,7 @@ mkdir -p ../dist/{busybox,kernel,user,image}
 if ! docker container inspect "$CONTAINER" >/dev/null 2>&1; then
   docker run -dt --rm --name "$CONTAINER" \
     -v ..:/workspace \
+    --network=none \
     "$IMAGE:latest"
 fi
 

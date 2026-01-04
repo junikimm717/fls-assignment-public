@@ -75,23 +75,50 @@ in the order described:
 4. `image/` - students will automate bootable disk image generation.
 
 For further information about each part of the lab, please consult the README
-under each subdirectory.
+under each subdirectory. Your scripts must work **without** an internet
+connection and will be graded in such an environment.
 
-The `docker/` directory contains all the infrastructure scripts for the
+The `scripts/` directory contains all the infrastructure scripts for the
 assignment.
 
 # Final Result
 
-The scripts described above should result in a pipeline that builds up a
-bootable image at `./dist/bootable.img`. The following is roughly the container
-script that we will be running to build up your image (note the sequence of
-execution):
+You must design a build pipeline that builds up a functional Linux system.
+
+For both building and grading, your pipeline will **not** be given an open
+internet connection. For building, you should assume all directories outside of
+`$DIST` will be locked down to be read-only.
+
+## Building
+
+The scripts described in the previous sections should result in a pipeline that
+builds up a bootable image at `./dist/bootable.img`. The following is roughly
+the container script that we will be running to build up your image (note the
+sequence of execution):
 
 ```bash
-ROOTFS="/dist/busybox" ./busybox/build.sh
-ROOTFS="/dist/kernel" ./kernel/build.sh
-ROOTFS="/dist/user" ./user/build.sh
-ROOTFS="/dist/image" ./image/build.sh
+ROOTFS="$DIST/busybox" ./busybox/build.sh
+ROOTFS="$DIST/kernel" ./kernel/build.sh
+ROOTFS="$DIST/user" ./user/build.sh
+ROOTFS="$DIST/image" ./image/build.sh
 ```
 
-To test this for yourself, run the `./scripts/test-container.sh` script.
+To test the pipeline we will run, run the `./scripts/test-container.sh` script.
+
+## Grading
+
+Once you have your image at `./dist/bootable.img`, you can see whether it passes
+the autograder by running `./scripts/grade-image.sh`. We will be checking for
+the following:
+
+1. The VM boots with kernel logs visible
+2. A user can log into the VM as root with no password (important!)
+3. Eudev, chrony, and dhcpcd are all running as daemons
+4. The VM has a working network stack (we will ping a local server)
+5. The VM keeps track of time correctly.
+6. The VM can persist data on the disk across reboots
+
+**Note:** This assignment evaluates honest system construction. Deliberate
+attempts to deceive the grader or abuse the grading environment are considered
+violations of academic integrity and may result in manual review and grade
+adjustment.
