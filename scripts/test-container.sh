@@ -5,7 +5,7 @@ set -e
 DIR="$(realpath "$(dirname "$0" )" )"
 cd "$DIR"
 
-IMAGE="lfs-course-builder"
+IMAGE="ghcr.io/junikimm717/fls-grading/dev"
 CONTAINER="test-builder-lfs"
 
 if ! docker image inspect "$IMAGE" > /dev/null 2>&1; then
