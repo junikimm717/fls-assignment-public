@@ -16,13 +16,13 @@ mkdir -p ../dist/{busybox,kernel,user,image}
 if ! docker container inspect "$CONTAINER" >/dev/null 2>&1; then
   docker run -dt --rm --name "$CONTAINER" \
     -v ..:/workspace \
-    -v ../dist:/dist \
     "$IMAGE:latest"
 fi
 
-echo "exec"
 docker exec \
   -e DIST="/dist" \
   -e SRC="/src" \
   -it \
   "$CONTAINER" /build-all-stages.sh
+
+docker cp "$CONTAINER":/dist/bootable.img "../dist/bootable.img"
