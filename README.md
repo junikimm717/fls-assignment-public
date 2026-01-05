@@ -89,6 +89,14 @@ For both building and grading, your pipeline will **not** be given an open
 internet connection. For building, you should assume all directories outside of
 `$DIST` will be locked down to be read-only.
 
+Students registered for the class will be submitting on the class portal at
+[6s913.mit.junic.kim](https://6s913.mit.junic.kim). To generate the submission
+tarball, run the `./scripts/prepare-submission.sh` which will output further
+instructions.
+
+Please try to submit to the autograder once you have confirmed that your
+pipeline works correctly as explained by the instructions below.
+
 ## Building
 
 The scripts described in the previous sections should result in a pipeline that
@@ -104,6 +112,8 @@ ROOTFS="$DIST/image" ./image/build.sh
 ```
 
 To test the pipeline we will run, run the `./scripts/test-container.sh` script.
+If the build process succeeds, it should output a bootable image at
+`./dist/bootable.img`.
 
 ## Grading
 
