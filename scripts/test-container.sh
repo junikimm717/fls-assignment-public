@@ -35,7 +35,6 @@ docker create \
   --tty \
   --memory 8g \
   --pids-limit 512 \
-  --cpus 8 \
   -v "$WORKSPACE_HOST:/workspace:ro" \
   --tmpfs /tmp:rw,exec,size=4g \
   --tmpfs /dist:rw,exec,size=10g \
