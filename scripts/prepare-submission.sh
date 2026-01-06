@@ -3,6 +3,7 @@
 set -eu
 
 DIR="$(realpath "$(dirname "$0" )" )"
+mkdir -p "$DIR/../dist"
 DIST=$(realpath "$DIR/../dist")
 
 NAME="submission-$(docker run alpine arch).tar.gz"
@@ -22,7 +23,6 @@ if [ -n "$DIRTY" ]; then
   echo
 fi
 
-mkdir -p "$DIST"
 git archive HEAD --format=tar.gz -o "$DIST/$NAME"
 
 echo "Created a submission at $DIST/$NAME"
