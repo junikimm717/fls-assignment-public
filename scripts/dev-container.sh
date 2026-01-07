@@ -8,7 +8,7 @@ if test -z "$PART"; then
 fi
 
 DIR="$(realpath "$(dirname "$0" )" )"
-cd "$DIR"
+REPO_ROOT="$(cd "$DIR/.." && pwd -P)"
 
 IMAGE="ghcr.io/junikimm717/fls-grading/dev"
 CONTAINER="$PART-builder-lfs"
@@ -19,8 +19,8 @@ fi
 
 if ! docker container inspect "$CONTAINER" >/dev/null 2>&1; then
   docker run -dt --rm --name "$CONTAINER" \
-    -v ../"$PART":/workspace \
-    -v ../dist:/dist \
+    -v "$REPO_ROOT/$PART":/workspace \
+    -v "$REPO_ROOT/dist":/dist \
     "$IMAGE:latest"
 fi
 
