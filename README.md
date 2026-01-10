@@ -5,7 +5,7 @@ functional Linux-based operating system.
 
 See the syllabus [here](./syllabus.md).
 
-# Setup
+# Dependencies
 
 This course requires a Linux environment with [Docker](https://docker.com) installed.
 All project build processes will occur on a docker container, so few other
@@ -39,11 +39,17 @@ export PATH="\
 
 If you are on Windows, you need to
 
-1. Install Windows Subsystem for Linux (wsl) 2
+1. Install Windows Subsystem for Linux (wsl) 2, then reboot
 2. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/),
-   and enable "Use WSL 2 instead of Hyper-V" **during installation**
+   and enable "Use WSL 2 instead of Hyper-V" **during installation** (this
+   option is probably enabled by default), then reboot.
 3. In Docker Desktop, go to `Settings -> Resources -> WSL Integration`, and
    enable the integration for **Ubuntu**.
+
+Installing wsl involves running the following on powershell:
+```bash
+wsl --install
+```
 
 # Native Architecture
 
