@@ -1,5 +1,9 @@
 # Filesystem image builder
 
+To start this lab, `cd` to this directory and run
+`../scripts/image-container.sh` to get a shell into the docker container for
+this lab.
+
 You will implement shell code that builds and assembles the final filesystem
 image. The final disk image should have two partitions:
 

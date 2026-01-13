@@ -1,7 +1,8 @@
 # Building the Kernel
 
-To start this lab, run `../scripts/kernel-container.sh` to start the
-corresponding environment for this lab.
+To start this lab, `cd` to this directory and run
+`../scripts/kernel-container.sh` to get a shell into the docker container for
+this lab.
 
 You should aim to modify `./build.sh` such that in a clean run, it is capable of
 compiling a Linux kernel binary and placing it at `$DIST/linuximage`. You will

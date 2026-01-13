@@ -1,7 +1,8 @@
 # Building User Programs and the Root Filesystem
 
-To start this lab, run `../scripts/user-container.sh` to start the corresponding
-environment for this section of the lab.
+To start this lab, `cd` to this directory and run
+`../scripts/user-container.sh` to get a shell into the docker container for
+this lab.
 
 The **build.sh** script will be run by the graders to check whether you
 correctly configure the root filesystem.

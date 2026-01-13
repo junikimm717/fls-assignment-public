@@ -5,51 +5,8 @@ functional Linux-based operating system.
 
 See the syllabus [here](./syllabus.md).
 
-# Dependencies
-
-This course requires a Linux environment with [Docker](https://docker.com) installed.
-All project build processes will occur on a docker container, so few other
-dependencies are strictly required.
-
-## Linux
-
-Install `docker` (`docker.io` on Debian or Ubuntu-based distributions) via your
-native package manager. Your user should be part of the `docker` group to access
-the docker socket.
-
-## MacOS
-
-Use the [Homebrew](https://brew.sh) package manager to install either
-[Orbstack](https://orbstack.dev/) (the free version is fine) or [Docker
-Desktop](https://www.docker.com/products/docker-desktop/).
-
-Please note that you may need to modify the `$PATH` variable in your `~/.zshrc`
-for Homebrew to work correctly. In particular, you probably want the following
-lines in your zshrc:
-
-```bash
-# The below prefix is /opt/homebrew for m-series macs, /usr/local for intel macs.
-export PATH="\
-:/opt/homebrew/bin\
-:$HOME/.local/bin\
-:$PATH"
-```
-
-## Windows
-
-If you are on Windows, you need to
-
-1. Install Windows Subsystem for Linux (wsl) 2, then reboot
-2. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/),
-   and enable "Use WSL 2 instead of Hyper-V" **during installation** (this
-   option is probably enabled by default), then reboot.
-3. In Docker Desktop, go to `Settings -> Resources -> WSL Integration`, and
-   enable the integration for **Ubuntu**.
-
-Installing wsl involves running the following on powershell:
-```bash
-wsl --install
-```
+If you do not have docker installed on your system (it is effectively the only
+real dependency) please consult [SETUP.md](./SETUP.md).
 
 # Native Architecture
 
@@ -73,19 +30,22 @@ architectures will not be supported by this class.
 There are several main subdirectories to consider, which should be completed
 in the order described:
 
-1. `busybox/` - students will be compiling up Busybox and musl, installing that
-   onto a filesystem image, and generating an initramfs image.
-2. `kernel/` - students will configure and build a Linux kernel.
+1. `busybox/` - students will be writing a script that compiles up Busybox and
+   musl, installing the required files onto a target filesystem, and generating
+   an initramfs image.
+2. `kernel/` - students will write a script that configures and builds a Linux
+   kernel.
 3. `user/` - students will populate the rest of the root filesystem with
    essential system configuration files and daemon programs.
 4. `image/` - students will automate bootable disk image generation.
 
 For further information about each part of the lab, please consult the README
-under each subdirectory. Your scripts must work **without** an internet
-connection and will be graded in such an environment.
+under each subdirectory. For security reasons, your build scripts will not be
+provided with a connection to the open internet; the required source code is
+provided in the docker image.
 
 The `scripts/` directory contains all the infrastructure scripts for the
-assignment.
+assignment. It can launch docker containers per assignment.
 
 # Final Result
 
@@ -96,30 +56,28 @@ internet connection. For building, you should assume all directories outside of
 `$DIST` will be locked down to be read-only.
 
 Students registered for the class will be submitting on the class portal at
-[6s913.mit.junic.kim](https://6s913.mit.junic.kim). To generate the submission
-tarball, run the `./scripts/prepare-submission.sh` which will output further
-instructions.
+[6s913.mit.junic.kim](https://6s913.mit.junic.kim).
 
-Please try to submit to the autograder once you have confirmed that your
-pipeline works correctly as explained by the instructions below.
+Please try to submit to the autograder only once you have confirmed that your
+pipeline works correctly as explained by the instructions below. We have limited
+infrastructure, so please be conservative with submissions.
 
 ## Building
 
 The scripts described in the previous sections should result in a pipeline that
-builds up a bootable image at `./dist/bootable.img`. The following is roughly
-the container script that we will be running to build up your image (note the
-sequence of execution):
+builds up a bootable image at `./dist/bootable.img`. We will be running the
+following programs in sequence with the following time limits:
 
-```bash
-ROOTFS="$DIST/busybox" ./busybox/build.sh
-ROOTFS="$DIST/kernel" ./kernel/build.sh
-ROOTFS="$DIST/user" ./user/build.sh
-ROOTFS="$DIST/image" ./image/build.sh
-```
+1. `./busybox/build.sh` with 5 minutes
+2. `./kernel/build.sh` with 20 minutes
+3. `./user/build.sh` with 5 minutes
+4. `./image/build.sh` with 5 minutes
+
+Grading will occur on AWS instances with 8GB RAM and 4 vCPU's.
 
 To test the pipeline we will run, run the `./scripts/test-container.sh` script.
 If the build process succeeds, it should output a bootable image at
-`./dist/bootable.img`.
+`./dist/bootable.img` (the file name must be exact).
 
 ## Grading
 
@@ -138,3 +96,19 @@ the following:
 attempts to deceive the grader or abuse the grading environment are considered
 violations of academic integrity and may result in manual review and grade
 adjustment.
+
+## Submitting
+
+**Important Note**: Please ensure your repository is devoid of symlinks or any
+non-regular files. For security reasons, the grader will automatically reject
+submissions that contain such files.
+
+1. Log into the portal at [6s913.mit.junic.kim](https://6s913.mit.junic.kim)
+2. Run `./scripts/prepare-submission.sh`. That will output a tar.gz file in
+   `dist/`
+3. Submit the tar.gz file at [6s913.mit.junic.kim/portal/submit](https://6s913.mit.junic.kim/portal/submit)
+4. Wait for the grader to output your submission result. If you click on the
+   submission number, you will be redirected to a page where you can browse the
+   build logs and download your original tarball.
+
+The build log is truncated at 20MB to prevent certain classes of DoS attacks.
