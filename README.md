@@ -1,12 +1,13 @@
 # 6.S913 Assignment
 
-The only assignment of the course; to create a build system generating a
-functional Linux-based operating system.
+We recommend you read through this README, the README's for each part of the
+assignment, and the lecture materials and handouts thoroughly as you do the
+assignment. They contain information you will need for the lab, as well as
+common pitfalls to avoid.
 
-See the syllabus [here](./syllabus.md).
+Please consult [SETUP.md](./SETUP.md) for instructions on installing docker.
 
-If you do not have docker installed on your system (it is effectively the only
-real dependency) please consult [SETUP.md](./SETUP.md).
+Once you have docker working, clone this repository onto your local system.
 
 # Native Architecture
 
@@ -49,7 +50,7 @@ assignment. It can launch docker containers per assignment.
 
 # Final Result
 
-You must design a build pipeline that builds up a functional Linux system.
+You must implement a build pipeline that builds up a functional Linux system.
 
 For both building and grading, your pipeline will **not** be given an open
 internet connection. For building, you should assume all directories outside of
@@ -85,11 +86,11 @@ Once you have your image at `./dist/bootable.img`, you can see whether it passes
 the autograder by running `./scripts/grade-image.sh`. We will be checking for
 the following:
 
-1. The VM boots with kernel logs visible
+1. The VM boots into a disk-backed filesystem with kernel logs visible
 2. A user can log into the VM as root with no password (important!)
 3. Eudev, chrony, and dhcpcd are all running as daemons
 4. The VM has a working network stack (we will ping a local server)
-5. The VM keeps track of time correctly.
+5. The VM keeps track of time roughly correctly.
 6. The VM can persist data on the disk across reboots
 
 **Note:** This assignment evaluates honest system construction. Deliberate
