@@ -12,9 +12,13 @@ the docker socket.
 
 ## MacOS
 
-Use the [Homebrew](https://brew.sh) package manager to install either
-[Orbstack](https://orbstack.dev/) (the free version is fine) or [Docker
-Desktop](https://www.docker.com/products/docker-desktop/).
+Use the [Homebrew](https://brew.sh) package manager to install
+[Colima](https://github.com/abiosoft/colima) or
+[Orbstack](https://orbstack.dev/) (the free version is fine).
+
+We do not recommend
+[Docker Desktop](https://www.docker.com/products/docker-desktop/)
+due to performance reasons.
 
 Please note that you may need to modify the `$PATH` variable in your `~/.zshrc`
 for Homebrew to work correctly. In particular, you probably want the following
