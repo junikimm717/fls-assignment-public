@@ -41,7 +41,7 @@ docker create \
   -e DIST=/dist \
   -e SRC=/writable_src \
   "$IMAGE" \
-  /usr/bin/tini -- sleep infinity
+  /usr/bin/tini -- sleep 2400
 
 docker start "$CONTAINER"
 
