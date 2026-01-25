@@ -19,7 +19,7 @@ if ! docker image inspect "$IMAGE" > /dev/null 2>&1; then
 fi
 
 docker run \
-  --rm -it \
+  --rm \
   -v "$(dirname "$BOOTABLE")":/dist \
   --network=none \
   "$IMAGE" \

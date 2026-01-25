@@ -32,7 +32,6 @@ docker create \
   --name "$CONTAINER" \
   --read-only \
   --network none \
-  --tty \
   --memory 8g \
   --pids-limit 512 \
   -v "$WORKSPACE_HOST:/workspace:ro" \
