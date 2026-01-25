@@ -15,6 +15,8 @@ the docker socket.
 Use the [Homebrew](https://brew.sh) package manager to install
 [Colima](https://github.com/abiosoft/colima) or
 [Orbstack](https://orbstack.dev/) (the free version is fine).
+Colima is free software, Orbstack is much faster and can use all of your
+MacBook CPU cores.
 
 We do not recommend
 [Docker Desktop](https://www.docker.com/products/docker-desktop/)
