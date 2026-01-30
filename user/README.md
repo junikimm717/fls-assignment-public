@@ -31,10 +31,9 @@ The container that you'll get when running `../scripts/user-container.sh`
 3. Properly configured `/etc/group`, `/etc/shadow`, `/etc/passwd` (so that the
    root user can actually log in)
 4. A hostname set to your kerb.
+5. dhcpcd, eudev, and chrony running on your system.
 
 ## Optional
 
-1. Dhcpcd (for internet connectivity)
-2. Chrony (ntp client)
-3. Regular users and doas (must be set as a SUID binary when constructing the
+1. Regular users and doas (must be set as a SUID binary when constructing the
    bootable image)
